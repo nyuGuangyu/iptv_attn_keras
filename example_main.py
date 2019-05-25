@@ -1,4 +1,4 @@
-from data_loader.iptv_data_loader import IptvDataLoader
+from data_loader.simple_mnist_data_loader import SimpleMnistDataLoader
 from models.simple_mnist_model import SimpleMnistModel
 from trainers.simple_mnist_trainer import SimpleMnistModelTrainer
 from utils.config import process_config
@@ -19,7 +19,7 @@ def main():
     create_dirs([config.callbacks.tensorboard_log_dir, config.callbacks.checkpoint_dir])
 
     print('Create the data generator.')
-    data_loader = IptvDataLoader(config)
+    data_loader = SimpleMnistDataLoader(config)
 
     print('Create the model.')
     model = SimpleMnistModel(config)
